@@ -6,7 +6,6 @@ from spotipy.oauth2 import SpotifyClientCredentials
 CLIENT_ID = "70a9fb89662f4dac8d07321b259eaad7"
 CLIENT_SECRET = "4d6710460d764fbbb8d8753dc094d131"
 
-# Initialize the Spotify client
 client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
@@ -28,7 +27,7 @@ def recommend(song):
     recommended_music_names = []
     recommended_music_posters = []
     for i in distances[1:6]:
-        # fetch the movie poster
+
         artist = music.iloc[i[0]].artist
         print(artist)
         print(music.iloc[i[0]].song)
